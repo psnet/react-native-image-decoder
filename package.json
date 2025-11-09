@@ -20,7 +20,8 @@
     "decoder",
     "android",
     "stb_image",
-    "zero-copy"
+    "zero-copy",
+    "zero dependencies"
   ],
   "peerDependencies": {
     "react-native": ">=0.81.5"
