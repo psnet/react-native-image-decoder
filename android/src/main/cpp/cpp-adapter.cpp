@@ -51,10 +51,9 @@ static jsi::ArrayBuffer createZeroCopyArrayBuffer(jsi::Runtime& rt,
 
 
 /**
- * decodeImage_jsi
- * - Zero-copy input: reads compressed bytes from incoming Uint8Array.buffer via ArrayBuffer::data()/size()
+ * - Zero-copy input: reads compressed bytes from incoming Uint8Array.buffer via ArrayBuffer::data()
  * - Uses stb_image to decode into RGBA (4 channels)
- * - Wraps decoded pixels into a host-backed ArrayBuffer (best-effort) and returns a Uint8Array view
+ * - Wraps decoded pixels into ArrayBuffer and returns a Uint8Array view
  */
 static jsi::Value decodeImage_jsi(jsi::Runtime& rt,
                                   const jsi::Value& thisVal,
@@ -138,9 +137,13 @@ Java_com_reactnativeimagedecoder_ImageDecoderModule_nativeInstall(JNIEnv* env, j
 
     jsi::Object rnObj(rt);
 
+    // https://github.com/facebook/hermes/blob/main/API/jsi/jsi/jsi.h#L1310
     auto decodeFunc = jsi::Function::createFromHostFunction(
         rt,
         jsi::PropNameID::forAscii(rt, "decodeImage"),
+        // expected parameters count
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length
+        // todo: make 1
         2,
         decodeImage_jsi
     );
