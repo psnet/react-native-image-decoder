@@ -6,6 +6,12 @@ Android-only **fast** `JSI C++` **image decoder** (JS API) zero-copy input/outpu
 
 **Target:** React Native >= 0.81.5 with Hermes.
 
+### Installation
+
+```
+npm i https://github.com/psnet/react-native-image-decoder
+```
+
 ### API
 
 ```ts
