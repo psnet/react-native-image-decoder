@@ -1,0 +1,31 @@
+{
+  "name": "react-native-image-decoder",
+  "version": "1.1.0",
+  "author": {
+    "name": "Serhii Pustovit",
+    "url": "https://github.com/psnet"
+  },
+  "homepage": "https://github.com/psnet/react-native-image-decoder",
+  "description": "Android-only JSI C++ image decoder (TS/JS API) zero-copy input using stb_image",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "source": "src/index.ts",
+  "keywords": [
+    "react-native",
+    "jsi",
+    "image",
+    "decoder",
+    "android",
+    "stb_image",
+    "zero-copy",
+    "zero dependencies",
+    "jpeg",
+    "png"
+  ],
+  "peerDependencies": {
+    "react-native": ">=0.81.5"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  }
+}
